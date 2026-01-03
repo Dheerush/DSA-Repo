@@ -1,0 +1,1 @@
+.reduce((curr, acc) => curr + acc, 0);
