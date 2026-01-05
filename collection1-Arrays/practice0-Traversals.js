@@ -644,12 +644,12 @@ console.log("Cardiology Surgeons:", cardioSurgeons);
 
 // Q5. Give me the list of each doctor with their respective patients
 // Q5. List of each doctor with their respective patients
-const doctorPatientMap = hospitalData.departments.flatMap(dept =>
-    dept.doctors.map(doc => {
+const doctorPatientMap = hospitalData.departments.
+    flatMap(dept => dept.doctors.map(doc => {
         const patientNames = doc.patients.map(p => p.name);
-        return `${doc.name} : [${patientNames.join(", ")}]`;
-    })
-);
+            return `${doc.name} : [${patientNames.join(", ")}]`;
+        })
+    );
 
 console.log(doctorPatientMap);
 /* Output: [
