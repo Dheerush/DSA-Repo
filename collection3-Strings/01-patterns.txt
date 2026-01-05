@@ -1,0 +1,155 @@
+
+FAANG STRING DSA PATTERNS & QUESTION ROADMAP
+===========================================
+
+This file lists ALL important STRING patterns and representative questions
+you should practice for FAANG-level interviews.
+
+--------------------------------------------------
+1. SUBSTRING (CONTIGUOUS) + SLIDING WINDOW
+--------------------------------------------------
+- Longest Substring Without Repeating Characters
+- Longest Substring With At Most K Distinct Characters
+- Longest Repeating Character Replacement
+- Minimum Window Substring
+- Count Substrings With Exactly K Distinct Characters
+- Number of Substrings Containing All Three Characters
+- Maximum Number of Vowels in a Substring
+- Substring With Concatenation of All Words
+
+Key Techniques:
+- Sliding Window
+- Two Pointers
+- Frequency Map / Array
+
+--------------------------------------------------
+2. SUBSEQUENCE (NOT CONTIGUOUS)
+--------------------------------------------------
+- Check If One String Is Subsequence of Another
+- Longest Common Subsequence (LCS)
+- Longest Palindromic Subsequence
+- Count Distinct Subsequences
+- Delete Operation for Two Strings
+- Shortest Common Supersequence
+
+Key Techniques:
+- Dynamic Programming
+- Two Pointers
+
+--------------------------------------------------
+3. PALINDROME PATTERN
+--------------------------------------------------
+- Valid Palindrome
+- Longest Palindromic Substring
+- Count Palindromic Substrings
+- Palindrome Partitioning
+- Minimum Cuts for Palindrome Partitioning
+
+Key Techniques:
+- Two Pointers
+- Expand Around Center
+- Dynamic Programming
+- Manacher’s Algorithm (Advanced)
+
+--------------------------------------------------
+4. FREQUENCY / ANAGRAM PATTERN
+--------------------------------------------------
+- Valid Anagram
+- Group Anagrams
+- Find All Anagrams in a String
+- First Unique Character in a String
+- Sort Characters by Frequency
+- Check Permutation in String
+
+Key Techniques:
+- HashMap
+- Fixed-size Frequency Array (26 chars)
+
+--------------------------------------------------
+5. PREFIX / SUFFIX PATTERN
+--------------------------------------------------
+- Longest Happy Prefix
+- Check String Rotation
+- Repeated Substring Pattern
+- Longest Prefix Which Is Also Suffix
+- Implement KMP Algorithm
+- Z-Algorithm Based Matching
+
+Key Techniques:
+- Prefix (LPS) Array
+- KMP Algorithm
+- Z Algorithm
+
+--------------------------------------------------
+6. TWO POINTER STRING PATTERN
+--------------------------------------------------
+- Reverse String
+- Valid Palindrome II
+- Remove Palindromic Subsequences
+- Compare Version Numbers
+- Backspace String Compare
+
+Key Techniques:
+- Left & Right Pointers
+- In-place Processing
+
+--------------------------------------------------
+7. PATTERN MATCHING / SEARCH
+--------------------------------------------------
+- Implement strStr()
+- Rabin–Karp Algorithm
+- KMP Pattern Matching
+- Z Algorithm
+
+Key Techniques:
+- Rolling Hash
+- Prefix Matching
+
+--------------------------------------------------
+8. STRING + STACK
+--------------------------------------------------
+- Valid Parentheses
+- Remove All Adjacent Duplicates in String
+- Remove K Digits
+- Decode String
+- Minimum Remove to Make Valid Parentheses
+
+--------------------------------------------------
+9. STRING + GREEDY
+--------------------------------------------------
+- Remove Duplicate Letters
+- Lexicographically Smallest String
+- Reorganize String
+- Partition Labels
+
+--------------------------------------------------
+10. ADVANCED / FAANG PLUS
+--------------------------------------------------
+- Word Break
+- Word Break II
+- Edit Distance
+- Interleaving String
+- Regular Expression Matching
+- Wildcard Matching
+
+--------------------------------------------------
+RECOMMENDED STUDY ORDER
+--------------------------------------------------
+1. Substring + Sliding Window
+2. Frequency / Anagrams
+3. Two Pointers
+4. Palindromes
+5. Subsequences (DP)
+6. Prefix / Suffix (KMP)
+7. Pattern Matching
+8. Advanced DP Strings
+
+--------------------------------------------------
+FINAL NOTE
+--------------------------------------------------
+If you master these patterns, you are COVERED for:
+- FAANG
+- Product-based companies
+- System Design string-heavy rounds
+
+Focus on PATTERNS, not memorizing solutions.

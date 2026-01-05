@@ -275,7 +275,7 @@ console.log("toSpliced result:", safeSpliced); // ["Apple", "Kiwi", "Mango"]
  */
 let numsCopy = [1, 2, 3, 4, 5, 6];
 // Copy elements from index 3 to 5 (4, 5) and paste them starting at index 0
-numsCopy.copyWithin(0, 3, 5); 
+numsCopy.copyWithin(0, 3, 5);
 console.log("After copyWithin:", numsCopy); // [4, 5, 3, 4, 5, 6]
 
 
@@ -309,12 +309,12 @@ let sum = numbers.reduce((acc, curr) => acc + curr, 0); // 100
 let letters = ["d", "a", "c", "b"];
 
 // Classic: sort() and reverse() [MUTATE original]
-letters.sort(); 
+letters.sort();
 console.log("Original letters changed:", letters); // ["a", "b", "c", "d"]
 
 // Modern: toSorted() and toReversed() [NON-MUTATING]
 let unsorted = [10, 5, 8];
-let sorted = unsorted.toSorted((a, b) => a - b); 
+let sorted = unsorted.toSorted((a, b) => a - b);
 console.log("Original remains [10, 5, 8]:", unsorted);
 console.log("New sorted array:", sorted); // [5, 8, 10]
 
@@ -332,4 +332,10 @@ console.log("New sorted array:", sorted); // [5, 8, 10]
 let myArr = [1, 2, 3];
 let updatedArr = myArr.with(1, 99); // [1, 99, 3]
 console.log("Original still [1, 2, 3]:", myArr);
+
+
+let arr11 = [10, 20, 30, 40];
+console.log("Reverse: ", arr11.reverse()); // reverse() does not return a new array. It mutates original one.
+
+
 
