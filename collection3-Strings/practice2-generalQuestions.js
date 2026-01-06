@@ -12,7 +12,7 @@
  * Q5. Remove all adjacent duplicates in a string.
  * Q6. Check if one string is a subsequence of another.
  * Q7. Find the first mismatch character between two strings.
- * Q8. Reverse only letters in a string (keep digits/symbols in place)..
+ * Q8. Reverse only letters in a string (keep digits/symbols in place).
  * Q9. Check if a string can become a palindrome by deleting at most one character.
  * Q10. Return minimum steps to delete a string by removing palindromic subsequences.
  * 
@@ -94,7 +94,6 @@ console.log("Word after swapping vowel: ", reverseVowels(myWord2));
 
 
 // Q3. Reverse characters of each word separately.
-let mySentence1 = "Stranger things is currently trending";
 function reverseEachWord(sentence) {
     let arr = sentence.trim().split(" ");
     let n = arr.length;
@@ -103,6 +102,7 @@ function reverseEachWord(sentence) {
     }
     return arr.join(" ").trim();
 }
+let mySentence1 = "Stranger things is currently trending";
 console.log("New Sentence: ", reverseEachWord(mySentence1));
 
 
@@ -174,6 +174,106 @@ function removeAllAdjacentDuplicates(str) {
 }
 let str5 = "abbaca";
 console.log("String after removing all adjacent duplicates: ", removeAllAdjacentDuplicates(str5))
+
+// Q7. Check if one string(str2) is a subsequence of another(str1).
+function checkSubsequence(str1, str2) {
+    let n1 = str1.length
+    let index1 = 0;
+    let n2 = str2.length;
+    let index2 = 0;
+    while (index1 < n1 && index2 < n2) {
+        if (str1[index1] === str2[index2]) index2++;
+        index1++;
+    }
+    return index2 === str2.length
+}
+let mainString = "abcdefg";
+let otherString = "ace";
+console.log(`Is ${otherString} a sunsequence of ${mainString} ? : `, checkSubsequence(mainString, otherString)); // true
+
+// Q8. Find the first mismatch character between two strings.
+function firstMismatch(str1, str2) {
+    let n1 = str1.length;
+    let index1 = 0;
+    let n2 = str2.length;
+    let index2 = 0;
+
+    while (index1 < n1 && index2 < n2) {
+        if (str1[index1] !== str2[index2]) {
+            return str1[index1]; // found the mismatch
+        }
+        index1++;
+        index2++;
+    }
+    // Edge case: All characters matched so far, but lengths are different
+    if (n1 > n2) return str1[index1];
+    if (n1 < n2) return str2[index2];
+
+    // No mismatch
+    return null;
+}
+let st1 = "leojnardo"
+let st2 = "leonard"
+console.log("First mismatch charcter is: ", firstMismatch(st1, st2)); // j
+
+// Q8. Reverse only letters in a string (keep digits/symbols in place).
+
+function checkLetter(ch) {
+    if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) return true;
+    return false;
+}
+
+function reverseOnlyLetters(str) {
+    let arr = str.split("");
+    let start = 0;
+    let end = arr.length - 1;
+
+    while (start < end) {
+
+        if (!checkLetter(arr[start])) {
+            start++;
+        } else if (!checkLetter(arr[end])) {
+            end--;
+        } else {
+            // both are letters → swap
+            [arr[start], arr[end]] = [arr[end], arr[start]];
+            start++;
+            end--;
+        }
+    }
+
+    return arr.join("");
+}
+
+let random1 = "abcd12@-k7";
+console.log("Reversing only letters: ", reverseOnlyLetters(random1));
+
+// Q9. Check if a string can become a palindrome by deleting at most one character.
+function isPalindromeRange(str, start, end) {
+    while (start < end) {
+        if (str[start] !== str[end]) return false;
+        start++;
+        end--;
+    }
+    return true;
+}
+
+function canBecomePalindrome(str) {
+    let left = 0;
+    let right = str.length-1;
+    while (left < right) {
+        if (str[left] === str[right]) {
+            left++;
+            right--;
+        } else {
+            return (isPalindromeRange(str, left + 1, right) || isPalindromeRange(str, left, right - 1))
+        }
+    }
+    return true; // already a palindrome
+}
+let random2 = "acak"
+console.log("Can it become a palindrome: ", canBecomePalindrome(random2)); // true
+
 
 
 
