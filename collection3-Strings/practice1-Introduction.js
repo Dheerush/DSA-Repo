@@ -415,8 +415,8 @@ let neighbour5 = "China"
 console.log("All neighbour joined: ", neighbour1.concat(" ", neighbour2, " ", neighbour3, " ", neighbour4, " ", neighbour5))
 
 // prefferd WAY : Using + operator
-console.log("All neighbours joined: ", neighbour1 + neighbour2 + neighbour3 + neighbour4 + neighbour5 ) ; // no space
-console.log("All neighbours joined: ", neighbour1 + " " +  neighbour2 + " " + neighbour3 + " " + neighbour4 + " " + neighbour5 ) ; 
+console.log("All neighbours joined: ", neighbour1 + neighbour2 + neighbour3 + neighbour4 + neighbour5); // no space
+console.log("All neighbours joined: ", neighbour1 + " " + neighbour2 + " " + neighbour3 + " " + neighbour4 + " " + neighbour5);
 
 
 // ============================================================================
@@ -492,17 +492,17 @@ console.log("padEnd: ", orderId.padEnd(5, "*"));
 // toString()
 // - Converts value to string explicitly
 let num = 100;
-console.log("toString: ", num.toString()); 
+console.log("toString: ", num.toString());
 // "100"
 
 // valueOf()
 // - Returns primitive value of the string
 let strObj = new String("hello");
-console.log("valueOf: ", strObj.valueOf()); 
+console.log("valueOf: ", strObj.valueOf());
 // "hello"
 
 let x = new String("hi");
-console.log(x == "hi");  
+console.log(x == "hi");
 // true → JS internally calls x.valueOf()
 
 /** Should we ever use valueOf()?
@@ -513,6 +513,27 @@ console.log(x == "hi");
  */
 
 // NOTE: Avoid using `new String()` in real code — creates wrapper objects
+
+
+// parsing
+let version1 = "1.002.33.0";
+let versionArray = version1.split(".");// all the element will be 
+console.log("Version Array: ", versionArray);
+for (let i = 0; i < versionArray.length; i++) {
+    parseInt(versionArray[i]); // parseInt returns a new number and we did not store it
+}
+console.log("Version Array: ", versionArray); // [ '1', '002', '33', '0' ]
+// this is ❌  WRONG: parseInt() returns a new number , It does NOT modify the original array element
+
+/**CORRECT WAY */
+for (let i = 0; i < versionArray.length; i++) {
+    versionArray[i] = parseInt(versionArray[i]); // parseInt returns a new number and we did not store it
+}
+console.log("Version Array: ", versionArray);  //  [ 1, 2, 33, 0 ]
+
+
+
+
 
 
 

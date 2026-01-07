@@ -339,3 +339,15 @@ console.log("Reverse: ", arr11.reverse()); // reverse() does not return a new ar
 
 
 
+// merging the array
+let count1 = [10, 20, 30, 40, 50]
+let count2 = [100, 200, 300, 400, 500]
+// Method 1 and 2 are safe as they dont modify the original arrays
+console.log("Merging the array, Method1 : ", count1.concat(count2)); // ℹ️ concat works but in modern JS we use spread operator why ?
+console.log("Merging the array, Method2 : ", [...count1, ...count2]); // more preferred
+
+// method 3 and 4 are not recommended practices as they modify the original array
+console.log("Merging the array, Method3 : ", count1.push(count2)); // prints 6 why --> becuase we are pushing the elements/array , i.e modifying the original array, push does not return a new array , also we are directly putting the array inside this
+console.log("Merging the array, Method4 : ", count2.push(...count1)); // same reason as above, here we are pushing the elements of count2 using spread operator
+
+console.log("New count2 array: ", count2);

@@ -14,7 +14,7 @@
  * Q7. Find the first mismatch character between two strings.
  * Q8. Reverse only letters in a string (keep digits/symbols in place).
  * Q9. Check if a string can become a palindrome by deleting at most one character.
- * Q10. Return minimum steps to delete a string by removing palindromic subsequences.
+ * Q10.Return minimum steps to delete a string by removing palindromic subsequences.
  * 
  *                                               SET 3
  * Q11. Compare two strings as if # is backspace.
@@ -217,7 +217,6 @@ let st2 = "leonard"
 console.log("First mismatch charcter is: ", firstMismatch(st1, st2)); // j
 
 // Q8. Reverse only letters in a string (keep digits/symbols in place).
-
 function checkLetter(ch) {
     if ((ch >= 'A' && ch <= 'Z') || (ch >= 'a' && ch <= 'z')) return true;
     return false;
@@ -260,7 +259,7 @@ function isPalindromeRange(str, start, end) {
 
 function canBecomePalindrome(str) {
     let left = 0;
-    let right = str.length-1;
+    let right = str.length - 1;
     while (left < right) {
         if (str[left] === str[right]) {
             left++;
@@ -276,13 +275,43 @@ console.log("Can it become a palindrome: ", canBecomePalindrome(random2)); // tr
 
 
 
-
+// Q10. Return minimum steps to delete a string by removing palindromic subsequences. ℹ️ DOUBT
 
 
 
 
 
 // =============================================== SET 3 ==============================================
+// Q11. Compare two strings as if # is backspace.
+// Example s= "ab#c" --> will become "ac" as # is a backspace so it wll remove b. t="ad#c" will be "ac". So both are equal.
+function compareHelper(str) {
+    let myStack = [];
+    for (let ch of str) {
+        if (ch === '#') {
+            if (myStack.length > 0) myStack.pop();
+        } else {
+            myStack.push(ch)
+        }
+    }
+    return myStack.join("")
+}
+
+function compareStringWithBackspace(s, t) {
+    return (compareHelper(s) === compareHelper(t));
+}
+let s1 = 'ab#c'
+let t1 = 'ad#c'
+let s2 = 'ab#cef#j'
+let t2 = 'ad#cek#j'
+console.log("Are they same after backspace: ", compareStringWithBackspace(s1, t1)); // true
+console.log("Are they same after backspace: ", compareStringWithBackspace(s1, t1)); // true
+
+// Q12. Compare version strings like "1.0.3" and "1.0.7".
+// Q13. Check if a typed string is a long-pressed version of a name.
+// Q14. Check if two strings follow the same character pattern.
+// Q15. Merge two strings by alternating characters.
+
+
 // =============================================== SET 4 ==============================================
 // =============================================== SET 5 ==============================================
 
